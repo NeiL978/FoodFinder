@@ -14,7 +14,9 @@ class RestaurantTableViewController: UITableViewController {
     
     var restaurantImgs = [#imageLiteral(resourceName: "cafedeadend"), #imageLiteral(resourceName: "homei"), #imageLiteral(resourceName: "teakha"), #imageLiteral(resourceName: "cafeloisl"), #imageLiteral(resourceName: "petiteoyster"), #imageLiteral(resourceName: "forkeerestaurant"), #imageLiteral(resourceName: "posatelier"), #imageLiteral(resourceName: "bourkestreetbakery"), #imageLiteral(resourceName: "haighschocolate"), #imageLiteral(resourceName: "palominoespresso"), #imageLiteral(resourceName: "upstate"), #imageLiteral(resourceName: "traif"), #imageLiteral(resourceName: "grahamavenuemeats"), #imageLiteral(resourceName: "wafflewolf"), #imageLiteral(resourceName: "fiveleaves"), #imageLiteral(resourceName: "cafelore"), #imageLiteral(resourceName: "confessional"), #imageLiteral(resourceName: "barrafina"), #imageLiteral(resourceName: "donostia"), #imageLiteral(resourceName: "royaloak"), #imageLiteral(resourceName: "caskpubkitchen")]
     
+    var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
     
+    var restaurantType = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "American", "Breakfase & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
     
     override func viewDidLoad() {
@@ -47,7 +49,11 @@ class RestaurantTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.nameLabel.text = restaurantNames[indexPath.row]
+        cell.locationLabel.text = restaurantLocations[indexPath.row]
+        cell.typeLabel.text = restaurantType[indexPath.row]
         cell.thumbnailImageView.image = restaurantImgs[indexPath.row]
+//        cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.bounds.height / 2
+//        cell.thumbnailImageView.clipsToBounds = true
 
         return cell
     }
